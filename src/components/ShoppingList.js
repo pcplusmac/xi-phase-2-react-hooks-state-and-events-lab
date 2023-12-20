@@ -7,8 +7,19 @@ function ShoppingList({ items }) {
   const [selectedCategory, setSelectedCategory] = useState("All")
 
   function handleSelectClick(event) {
-    setSelectedCategory( selectedCategory = event.target.value)
-  }
+    setSelectedCategory(event.target.value
+  )
+    }
+  const newItems = items.filter (item => {
+    if (selectedCategory === "All"){
+
+      return true;
+    } 
+    else {
+      return item.category === selectedCategory;
+    }
+    
+  })
 
   
 
@@ -23,7 +34,7 @@ function ShoppingList({ items }) {
         </select>
       </div>
       <ul className="Items">
-        {items.map((item) => (
+        {newItems.map((item) => (
           <Item key={item.id} name={item.name} category={item.category} />
         ))}
       </ul>
