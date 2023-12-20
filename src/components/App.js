@@ -4,14 +4,14 @@ import itemData from "../data/items";
 import {useState} from "react";
 
 function App() {
-  const[light, setLight] = useState("false");
+  const[light, setLight] = useState("true");
   
   // replace 'false' with a state variable that can be toggled between true and false
   // this will be used for the Dark Mode Toggle feature
   function handleModeClick(){
     setLight((light) => !light)
   }
-  const appClass = light ? "App dark" : "App light"
+  const appClass = light ? "App light" : "App dark"
 
   return (
     <div className={appClass}>
