@@ -6,10 +6,16 @@ function ShoppingList({ items }) {
 
   const [selectedCategory, setSelectedCategory] = useState("All")
 
+  function handleSelectClick(event) {
+    setSelectedCategory( selectedCategory = event.target.value)
+  }
+
+  
+
   return (
     <div className="ShoppingList">
       <div className="Filter">
-        <select name="filter">
+        <select name="filter" onClick={handleSelectClick}>
           <option value="All">Filter by category</option>
           <option value="Produce">Produce</option>
           <option value="Dairy">Dairy</option>
